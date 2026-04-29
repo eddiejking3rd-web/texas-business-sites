@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heights Handyman | Houston's Reliable Home Repair & Remodeling</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { line-height: 1.6; color: #333; }
+    .hero { background: linear-gradient(135deg, #2c3e50 0%, #4a6a8a 100%); color: white; padding: 80px 20px; text-align: center; }
+    .hero h1 { font-size: 2.8em; margin-bottom: 15px; }
+    .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 25px; opacity: 0.9; }
+    .btn { display: inline-block; background: #e67e22; color: white; padding: 14px 36px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; }
+    .btn:hover { background: #d35400; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { text-align: center; font-size: 2em; color: #2c3e50; margin-bottom: 40px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .service-card { background: #f8f9fa; border-radius: 12px; padding: 30px; text-align: center; transition: transform 0.3s; border: 1px solid #e9ecef; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .service-card .icon { font-size: 2.5em; margin-bottom: 15px; }
+    .service-card h3 { color: #2c3e50; margin-bottom: 10px; }
+    .about { background: #f0f4f8; }
+    .testimonials { background: #2c3e50; color: white; }
+    .testimonials .section-title { color: white; }
+    .testimonial-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; margin-bottom: 15px; }
+    .testimonial-card .name { font-weight: bold; margin-top: 10px; opacity: 0.9; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .pricing-card { background: white; border: 2px solid #e9ecef; border-radius: 12px; padding: 35px; text-align: center; transition: transform 0.3s; }
+    .pricing-card.featured { border-color: #e67e22; transform: scale(1.02); }
+    .pricing-card h3 { color: #2c3e50; font-size: 1.5em; margin-bottom: 10px; }
+    .pricing-card .price { font-size: 2em; color: #e67e22; font-weight: bold; margin: 15px 0; }
+    .pricing-card ul { list-style: none; margin: 20px 0; }
+    .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .contact { background: linear-gradient(135deg, #2c3e50, #4a6a8a); color: white; text-align: center; }
+    .contact .section-title { color: white; }
+    .contact-info { font-size: 1.2em; }
+    .contact-info p { margin: 10px 0; }
+    .contact-info a { color: #ffd700; text-decoration: none; }
+    .footer { background: #111; color: #aaa; text-align: center; padding: 30px; font-size: 0.9em; }
+    .badge { display: inline-block; background: #e67e22; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; margin-bottom: 10px; }
+    .service-area { background: #e8f0fe; border-radius: 12px; padding: 20px; margin-top: 20px; }
+    @media (max-width: 768px) { .hero h1 { font-size: 2em; } }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="badge">🔧 Houston Heights' Go-To Handyman Since 2006</div>
+    <h1>Heights Handyman</h1>
+    <p>Serving the Houston Heights since 2006 — Bath & Kitchen Remodels, Additions, Tile, Doors, Windows, Sheetrock, Plumbing, Electrical, Carpentry, Painting, and more.</p>
+    <a href="mailto:gaengle@gmail.com" class="btn">✉️ Get a Quote</a>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">🔨 Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon">🛁</div><h3>Bath & Kitchen Remodels</h3><p>Complete bathroom and kitchen transformations. Custom tile, cabinetry, countertops, fixtures, and more. Quality workmanship you can trust.</p></div>
+      <div class="service-card"><div class="icon">🚪</div><h3>Doors & Windows</h3><p>Installation and repair of interior/exterior doors and windows. New construction, replacement, and weatherproofing.</p></div>
+      <div class="service-card"><div class="icon">🧱</div><h3>Tile & Flooring</h3><p>Ceramic, porcelain, and natural stone tile installation. Hardwood, laminate, and luxury vinyl flooring. Professional finishes guaranteed.</p></div>
+      <div class="service-card"><div class="icon">⚡</div><h3>Electrical & Plumbing</h3><p>Minor electrical repairs (outlets, switches, fixtures) and plumbing fixes (faucets, toilets, drains). Licensed and safe work.</p></div>
+      <div class="service-card"><div class="icon">🎨</div><h3>Painting</h3><p>Interior and exterior painting with premium materials. Meticulous preparation, clean lines, and beautiful results every time.</p></div>
+      <div class="service-card"><div class="icon">🔨</div><h3>Carpentry & Repairs</h3><p>Custom carpentry, sheetrock repair, baseboards, crown molding, and general home repairs. No job too big or too small.</p></div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2 class="section-title">About Heights Handyman</h2>
+      <div style="max-width:800px;margin:0 auto;text-align:center;">
+        <p style="font-size:1.1em;margin-bottom:20px;">Heights Handyman has been serving the Houston Heights community since 2006 with honest, reliable home repair and remodeling services. We specialize in everything from small repairs to full home additions.</p>
+        <p style="font-size:1.1em;">With over 19 years of experience, we pride ourselves on attention to detail, fair pricing, and building long-term relationships with our neighbors. We treat every home like it's our own.</p>
+        <div class="service-area">
+          <strong style="font-size:1.2em;">📍 Service Area:</strong> Houston Heights, Cottage Grove, Rice Military, Montrose, and surrounding Houston neighborhoods.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Neighbors Say</h2>
+      <div class="testimonial-card">"Heights Handyman has helped us with countless projects over the years. Always reliable, fair priced, and does excellent work." <div class="name">— Tom W., Houston Heights</div></div>
+      <div class="testimonial-card">"Complete kitchen remodel — couldn't be happier! They stayed on schedule and budget. Highly recommend." <div class="name">— Jennifer L., Cottage Grove</div></div>
+      <div class="testimonial-card">"Fast response for emergency plumbing repair on a Saturday. Professional and reasonable. Lifesaver!" <div class="name">— Mark D., Montrose</div></div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 class="section-title">💰 Pricing & Services</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Small Repairs</h3>
+        <div class="price">$75+</div>
+        <ul>
+          <li>Drywall patches</li>
+          <li>Fixture installation</li>
+          <li>Minor plumbing/electrical</li>
+          <li>Free estimates</li>
+        </ul>
+        <a href="mailto:gaengle@gmail.com" class="btn" style="background:#2c3e50;">Book Now</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge" style="background:#e67e22;">POPULAR</div>
+        <h3>Room Remodel</h3>
+        <div class="price">$$</div>
+        <ul>
+          <li>Bathroom/kitchen remodels</li>
+          <li>Custom tile & flooring</li>
+          <li>Plumbing & electrical included</li>
+          <li>19+ years experience</li>
+        </ul>
+        <a href="mailto:gaengle@gmail.com" class="btn">Free Quote</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Home Additions</h3>
+        <div class="price">$$$</div>
+        <ul>
+          <li>Room additions</li>
+          <li>Sunrooms & patios</li>
+          <li>Full project management</li>
+          <li>Licensed work</li>
+        </ul>
+        <a href="mailto:gaengle@gmail.com" class="btn" style="background:#2c3e50;">Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2 class="section-title">📞 Contact Heights Handyman</h2>
+      <p style="font-size:1.2em;margin-bottom:20px;">Serving Houston since 2006. Email us for a free estimate!</p>
+      <div class="contact-info">
+        <p>✉️ <a href="mailto:gaengle@gmail.com">gaengle@gmail.com</a></p>
+        <p>📍 Houston Heights & Surrounding Areas</p>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="https://www.facebook.com/MAKEREADY4SALE" target="_blank" style="color:#ffd700;text-decoration:none;margin:0 10px;">👍 Find us on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Heights Handyman. All rights reserved. | Houston, TX</p>
+    <p>Website designed by SiteCraft Pro — Professional websites for local service businesses</p>
+  </footer>
+</body>
+</html>
