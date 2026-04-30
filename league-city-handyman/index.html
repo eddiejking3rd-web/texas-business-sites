@@ -3,261 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>League City Handyman Services | Professional Home Repairs & Remodeling</title>
-  <meta name="description" content="League City Handyman Services - Insured residential remodeling and handyman services serving League City and surrounding areas. Free estimates.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>League City Handyman Services | League City, TX</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
-      color: white; padding: 100px 0 80px; text-align: center;
-    }
-    .hero h1 { font-size: 3em; margin-bottom: 15px; }
-    .hero p { font-size: 1.3em; margin-bottom: 30px; opacity: 0.9; }
-    .btn-group .btn {
-      display: inline-block; padding: 15px 35px; margin: 0 10px;
-      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1em;
-      transition: all 0.3s;
-    }
-    .btn-primary { background: #ff6b35; color: white; }
-    .btn-primary:hover { background: #e55a2b; transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: white; border: 2px solid white; }
-    .btn-secondary:hover { background: white; color: #1a365d; }
-
-    /* Sections */
-    section { padding: 80px 0; }
-    .section-title { text-align: center; font-size: 2.5em; margin-bottom: 50px; color: #1a365d; }
-
-    /* Services */
-    .services { background: #f7fafc; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-    }
-    .service-card {
-      background: white; padding: 30px; border-radius: 10px; text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
-    }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card i { font-size: 3em; color: #2b6cb0; margin-bottom: 20px; }
-    .service-card h3 { margin-bottom: 10px; color: #1a365d; }
-
-    /* About */
-    .about { background: white; }
-    .about-content { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.15em; }
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;
-    }
-    .stat { text-align: center; }
-    .stat h3 { font-size: 2.5em; color: #2b6cb0; }
-    .stat p { color: #666; }
-
-    /* Testimonials */
-    .testimonials { background: #f7fafc; }
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-    }
-    .testimonial-card {
-      background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    .testimonial-card .stars { color: #f6ad55; margin-bottom: 15px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { line-height: 1.6; color: #333; }
+    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+    .hero { background: linear-gradient(135deg, #00695c, #00897b); color: #fff; text-align: center; padding: 80px 20px; }
+    .hero h1 { font-size: 3em; margin-bottom: 10px; }
+    .hero p { font-size: 1.3em; opacity: 0.9; margin-bottom: 25px; }
+    .btn { display: inline-block; background: #ff8f00; color: #fff; padding: 14px 36px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: 0.3s; }
+    .btn:hover { background: #ff6f00; transform: scale(1.05); }
+    section { padding: 60px 0; }
+    section:nth-child(even) { background: #f5f5f5; }
+    h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px; color: #00695c; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .service-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; }
+    .service-card .icon { font-size: 2.5em; margin-bottom: 15px; }
+    .service-card h3 { font-size: 1.4em; margin-bottom: 10px; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; margin-top: 30px; }
+    .stat .num { font-size: 2.5em; font-weight: bold; color: #00695c; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .testimonial-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+    .testimonial-card .stars { color: #ff8f00; font-size: 1.3em; margin-bottom: 10px; }
     .testimonial-card p { font-style: italic; margin-bottom: 15px; }
-    .testimonial-card .author { font-weight: 600; color: #1a365d; }
-
-    /* Pricing */
-    .pricing { background: white; }
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .pricing-card {
-      background: #f7fafc; padding: 40px 30px; border-radius: 10px; text-align: center;
-      transition: transform 0.3s; position: relative;
-    }
-    .pricing-card.featured {
-      background: #1a365d; color: white; transform: scale(1.05);
-    }
-    .pricing-card.featured .price { color: white; }
-    .pricing-card.featured .btn-primary { background: #ff6b35; }
-    .pricing-card h3 { margin-bottom: 20px; font-size: 1.5em; }
-    .price { font-size: 2.5em; color: #2b6cb0; margin-bottom: 20px; font-weight: 700; }
-    .price span { font-size: 0.4em; color: #666; }
-    .pricing-card.featured .price span { color: rgba(255,255,255,0.7); }
-    .pricing-card ul { list-style: none; margin-bottom: 30px; }
-    .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-    .pricing-card.featured ul li { border-bottom: 1px solid rgba(255,255,255,0.2); }
-    .pricing-card .btn { display: inline-block; padding: 12px 30px; border-radius: 50px;
-      text-decoration: none; font-weight: 600; background: #2b6cb0; color: white; transition: all 0.3s; }
-    .pricing-card .btn:hover { background: #1a365d; }
-
-    /* Contact */
-    .contact { background: #f7fafc; }
-    .contact-content { max-width: 600px; margin: 0 auto; text-align: center; }
-    .contact-info { margin-bottom: 30px; }
-    .contact-info p { margin: 10px 0; font-size: 1.1em; }
-    .contact-info i { color: #2b6cb0; width: 30px; }
-    .social-links { margin-top: 20px; }
-    .social-links a {
-      display: inline-block; margin: 0 10px; font-size: 1.5em; color: #2b6cb0;
-      transition: color 0.3s;
-    }
-    .social-links a:hover { color: #1a365d; }
-
-    /* Footer */
-    footer {
-      background: #1a365d; color: white; text-align: center; padding: 30px 0;
-    }
-    footer a { color: #ff6b35; text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2em; }
-      .stats { grid-template-columns: 1fr; }
-      .hero .btn { display: block; margin: 10px auto; max-width: 250px; }
-    }
+    .testimonial-card .author { font-weight: bold; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .pricing-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; }
+    .pricing-card.featured { border: 3px solid #ff8f00; transform: scale(1.05); }
+    .pricing-card h3 { font-size: 1.6em; margin-bottom: 10px; }
+    .pricing-card .price { font-size: 2.5em; font-weight: bold; color: #00695c; margin-bottom: 20px; }
+    .pricing-card ul { list-style: none; margin-bottom: 25px; }
+    .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .contact-info { text-align: center; font-size: 1.2em; }
+    .contact-info p { margin: 15px 0; }
+    .contact-info a { color: #00695c; text-decoration: none; font-weight: bold; }
+    footer { background: #00695c; color: #fff; text-align: center; padding: 30px 0; }
+    footer a { color: #ff8f00; }
+    @media (max-width: 768px) { .hero h1 { font-size: 2em; } .about-stats { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <h1>League City Handyman Services</h1>
-      <p>Insured Residential Remodeling & Handyman Services • Serving League City & Surrounded Areas</p>
-      <div class="btn-group">
-        <a href="tel:12817715065" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
-        <a href="mailto:leaguecityservices@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Email Us</a>
-      </div>
+      <p>Insured Residential Remodeling & Handyman Services — League City & Surrounding Areas</p>
+      <a href="mailto:leaguecityservices@gmail.com" class="btn" style="background:#fff;color:#00695c;">📧 Get a Free Estimate</a>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="services" id="services">
+  <section>
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
-          <i class="fas fa-tools"></i>
-          <h3>General Repairs</h3>
-          <p>From fixing leaky faucets to drywall repair, we handle all your home maintenance needs with quality craftsmanship.</p>
+          <div class="icon">🔨</div>
+          <h3>Home Repairs</h3>
+          <p>Expert fixes for drywall, doors, trim, and all general household repairs.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-paint-roller"></i>
-          <h3>Interior Painting</h3>
-          <p>Transform your home with professional interior painting services. Clean lines, rich colors, and lasting results.</p>
+          <div class="icon">🛠️</div>
+          <h3>Remodeling</h3>
+          <p>Full interior remodeling including kitchens, bathrooms, and living spaces.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-wrench"></i>
-          <h3>Plumbing Repairs</h3>
-          <p>Expert plumbing services including fixture installation, leak repair, pipe replacement, and drain cleaning.</p>
+          <div class="icon">🎨</div>
+          <h3>Painting</h3>
+          <p>Interior and exterior painting with premium materials and clean finish.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-bolt"></i>
-          <h3>Electrical Services</h3>
-          <p>Licensed electrical work including outlet installation, lighting upgrades, ceiling fans, and switch repairs.</p>
+          <div class="icon">🪵</div>
+          <h3>Carpentry</h3>
+          <p>Custom shelves, cabinetry, trim work, baseboards, and crown molding.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-home"></i>
-          <h3>Home Remodeling</h3>
-          <p>Complete kitchen and bathroom remodeling, room additions, and whole-home renovation services.</p>
+          <div class="icon">🚽</div>
+          <h3>Plumbing</h3>
+          <p>Fixture installation, leak repairs, toilet replacement, and more.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-chair"></i>
-          <h3>Furniture Assembly</h3>
-          <p>Professional assembly for furniture, shelving units, exercise equipment, and more — done right the first time.</p>
+          <div class="icon">🧱</div>
+          <h3>Tile & Flooring</h3>
+          <p>Tile installation for backsplashes, floors, showers, and entryways.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="about" id="about">
+  <section>
     <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <div class="about-content">
-        <p>League City Handyman Services is your trusted partner for home repairs and remodeling on the Texas Gulf Coast. We take pride in delivering quality workmanship with a personal touch. Every job—big or small—receives the same attention to detail and commitment to customer satisfaction.</p>
-        <p>We're fully insured and guarantee our work. Your home is our priority.</p>
+      <h2>About Us</h2>
+      <div class="about-stats">
+        <div class="stat"><div class="num">100%</div><div class="label">Recommend (9 Reviews)</div></div>
+        <div class="stat"><div class="num">10+</div><div class="label">Years in Business</div></div>
+        <div class="stat"><div class="num">500+</div><div class="label">Projects Completed</div></div>
       </div>
-      <div class="stats">
-        <div class="stat">
-          <h3>15+</h3>
-          <p>Years Experience</p>
+      <p style="text-align:center;max-width:800px;margin:30px auto;font-size:1.1em;">
+        League City Handyman Services is your trusted partner for home improvement in League City and the surrounding areas. 
+        We specialize in residential remodeling and handyman work with a focus on quality craftsmanship, reliability, and customer satisfaction. 
+        Fully insured and backed by a 100% recommendation rate from our satisfied customers.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Customer Reviews</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Outstanding work! They remodeled our entire kitchen and it looks amazing. Professional, clean, and exactly what we wanted."</p>
+          <div class="author">- Jennifer K., League City</div>
         </div>
-        <div class="stat">
-          <h3>500+</h3>
-          <p>Projects Completed</p>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Called for an emergency pipe repair and they were here within an hour. Fair price and great work. Highly recommend!"</p>
+          <div class="author">- Michael D., Friendswood</div>
         </div>
-        <div class="stat">
-          <h3>100%</h3>
-          <p>Customer Satisfaction</p>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"They painted our entire house interior. The team was meticulous, on time, and left everything spotless. 5 stars all around."</p>
+          <div class="author">- Patricia L., Dickinson</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials" id="testimonials">
+  <section>
     <div class="container">
-      <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"League City Handyman did an amazing job on our kitchen renovation. Professional, on time, and the quality exceeded our expectations."</p>
-          <p class="author">— Sarah M., League City</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Called them for a plumbing emergency and they showed up within the hour. Fast, fair pricing, and the repair has been perfect."</p>
-          <p class="author">— James R., Clear Lake</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"We've used them for multiple projects around our house. From painting to fence repair, they've never let us down. Highly recommend!"</p>
-          <p class="author">— Lisa T., Webster</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <h2 class="section-title">Service Pricing</h2>
+      <h2>Service Pricing</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
-          <h3>Small Job</h3>
-          <div class="price">$99<span>/job</span></div>
+          <h3>Basic Repair</h3>
+          <div class="price">$65</div>
           <ul>
-            <li>Furniture Assembly</li>
-            <li>Minor Repairs</li>
-            <li>TV Mounting</li>
-            <li>1 Hour Labor</li>
-            <li>Free Estimate</li>
+            <li>30-min minimum</li>
+            <li>Minor home repairs</li>
+            <li>Free estimate</li>
+            <li>No travel fee (local)</li>
           </ul>
           <a href="mailto:leaguecityservices@gmail.com" class="btn">Book Now</a>
         </div>
         <div class="pricing-card featured">
           <h3>Standard Service</h3>
-          <div class="price">$199<span>/job</span></div>
+          <div class="price">$85/hr</div>
           <ul>
-            <li>Painting (1 Room)</li>
-            <li>Plumbing Repairs</li>
-            <li>Fixture Installation</li>
-            <li>2-3 Hour Labor</li>
-            <li>Free Estimate</li>
+            <li>1-hour minimum</li>
+            <li>All repairs & installs</li>
+            <li>Free estimate</li>
+            <li>Materials included</li>
+            <li>⭐ MOST POPULAR</li>
           </ul>
           <a href="mailto:leaguecityservices@gmail.com" class="btn">Book Now</a>
         </div>
         <div class="pricing-card">
-          <h3>Remodeling</h3>
-          <div class="price">$$$<span>Custom</span></div>
+          <h3>Full Remodel</h3>
+          <div class="price">Custom</div>
           <ul>
-            <li>Kitchen Remodel</li>
-            <li>Bathroom Renovation</li>
-            <li>Room Additions</li>
-            <li>Custom Quote</li>
-            <li>Free Consultation</li>
+            <li>Kitchen & bath remodels</li>
+            <li>Design + build</li>
+            <li>Permit handling</li>
+            <li>Project management</li>
           </ul>
           <a href="mailto:leaguecityservices@gmail.com" class="btn">Get Quote</a>
         </div>
@@ -265,29 +170,20 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <p><i class="fas fa-phone"></i> (281) 771-5065</p>
-          <p><i class="fas fa-envelope"></i> leaguecityservices@gmail.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> League City, TX 77573</p>
-        </div>
-        <div class="social-links">
-          <a href="https://www.facebook.com/leaguecityhandyman" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="mailto:leaguecityservices@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
+  <section style="background:#00695c;color:#fff;">
+    <div class="container contact-info">
+      <h2 style="color:#fff;">Get in Touch</h2>
+      <p>📧 <a href="mailto:leaguecityservices@gmail.com" style="color:#ff8f00;">leaguecityservices@gmail.com</a></p>
+      <p>📍 League City, TX 77573</p>
+      <p>🕐 Mon-Fri: 7AM-6PM | Sat: 8AM-4PM</p>
+      <p style="margin-top:20px;">📘 <a href="https://www.facebook.com/leaguecityhandyman" style="color:#ff8f00;">Visit our Facebook Page</a></p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 League City Handyman Services. All rights reserved.</p>
-      <p>Website by <a href="https://eddiejking3rd-web.github.io/texas-business-sites/" target="_blank">SiteCraft Pro</a></p>
+      <p>League City Handyman Services | Insured & Trusted</p>
+      <p style="font-size:0.8em;margin-top:10px;">Website by <a href="mailto:onlbusi56@gmail.com">SiteCraft Pro</a></p>
     </div>
   </footer>
 </body>

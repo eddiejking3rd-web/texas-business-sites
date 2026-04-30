@@ -3,276 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Handyman PRO - DFW | Professional Electrical, Plumbing & Remodeling in Hurst, TX</title>
-  <meta name="description" content="Handyman PRO DFW offers professional electrical, plumbing, remodeling, painting, and TV mounting in Hurst, TX and the Dallas-Fort Worth area.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Handyman PRO DFW | Hurst, TX</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    .hero {
-      background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-      color: white; padding: 100px 0 80px; text-align: center;
-    }
-    .hero h1 { font-size: 3em; margin-bottom: 15px; }
-    .hero p { font-size: 1.3em; margin-bottom: 30px; opacity: 0.9; }
-    .btn-group .btn {
-      display: inline-block; padding: 15px 35px; margin: 0 10px;
-      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1em;
-      transition: all 0.3s;
-    }
-    .btn-primary { background: #f4845f; color: white; }
-    .btn-primary:hover { background: #e06a3e; transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: white; border: 2px solid white; }
-    .btn-secondary:hover { background: white; color: #1b4332; }
-
-    section { padding: 80px 0; }
-    .section-title { text-align: center; font-size: 2.5em; margin-bottom: 50px; color: #1b4332; }
-
-    .services { background: #f0fdf4; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-    }
-    .service-card {
-      background: white; padding: 30px; border-radius: 10px; text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
-    }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card i { font-size: 3em; color: #2d6a4f; margin-bottom: 20px; }
-    .service-card h3 { margin-bottom: 10px; color: #1b4332; }
-
-    .about { background: white; }
-    .about-content { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.15em; }
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;
-    }
-    .stat { text-align: center; }
-    .stat h3 { font-size: 2.5em; color: #2d6a4f; }
-    .stat p { color: #666; }
-
-    .testimonials { background: #f0fdf4; }
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-    }
-    .testimonial-card {
-      background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    .testimonial-card .stars { color: #f6ad55; margin-bottom: 15px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { line-height: 1.6; color: #333; }
+    .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+    .hero { background: linear-gradient(135deg, #1a237e, #283593); color: #fff; text-align: center; padding: 80px 20px; }
+    .hero h1 { font-size: 3em; margin-bottom: 10px; }
+    .hero p { font-size: 1.3em; opacity: 0.9; margin-bottom: 25px; }
+    .btn { display: inline-block; background: #ff6f00; color: #fff; padding: 14px 36px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: 0.3s; }
+    .btn:hover { background: #e65100; transform: scale(1.05); }
+    section { padding: 60px 0; }
+    section:nth-child(even) { background: #f5f5f5; }
+    h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px; color: #1a237e; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .service-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; }
+    .service-card .icon { font-size: 2.5em; margin-bottom: 15px; }
+    .service-card h3 { font-size: 1.4em; margin-bottom: 10px; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; margin-top: 30px; }
+    .stat .num { font-size: 2.5em; font-weight: bold; color: #1a237e; }
+    .stat .label { font-size: 1em; color: #666; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .testimonial-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+    .testimonial-card .stars { color: #ff6f00; font-size: 1.3em; margin-bottom: 10px; }
     .testimonial-card p { font-style: italic; margin-bottom: 15px; }
-    .testimonial-card .author { font-weight: 600; color: #1b4332; }
-
-    .pricing { background: white; }
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-      max-width: 1000px; margin: 0 auto;
-    }
-    .pricing-card {
-      background: #f0fdf4; padding: 40px 30px; border-radius: 10px; text-align: center;
-      transition: transform 0.3s; position: relative;
-    }
-    .pricing-card.featured {
-      background: #1b4332; color: white; transform: scale(1.05);
-    }
-    .pricing-card.featured .price { color: white; }
-    .pricing-card.featured .price span { color: rgba(255,255,255,0.7); }
-    .pricing-card.featured ul li { border-bottom: 1px solid rgba(255,255,255,0.2); }
-    .pricing-card.featured .btn { background: #f4845f; }
-    .pricing-card h3 { margin-bottom: 20px; font-size: 1.5em; }
-    .price { font-size: 2.5em; color: #2d6a4f; margin-bottom: 20px; font-weight: 700; }
-    .price span { font-size: 0.4em; color: #666; }
-    .pricing-card ul { list-style: none; margin-bottom: 30px; }
-    .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-    .pricing-card .btn { display: inline-block; padding: 12px 30px; border-radius: 50px;
-      text-decoration: none; font-weight: 600; background: #2d6a4f; color: white; transition: all 0.3s; }
-    .pricing-card .btn:hover { background: #1b4332; }
-
-    .contact { background: #f0fdf4; }
-    .contact-content { max-width: 600px; margin: 0 auto; text-align: center; }
-    .contact-info { margin-bottom: 30px; }
-    .contact-info p { margin: 10px 0; font-size: 1.1em; }
-    .contact-info i { color: #2d6a4f; width: 30px; }
-    .social-links { margin-top: 20px; }
-    .social-links a {
-      display: inline-block; margin: 0 10px; font-size: 1.5em; color: #2d6a4f;
-      transition: color 0.3s;
-    }
-    .social-links a:hover { color: #1b4332; }
-
-    footer {
-      background: #1b4332; color: white; text-align: center; padding: 30px 0;
-    }
-    footer a { color: #f4845f; text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2em; }
-      .stats { grid-template-columns: 1fr; }
-      .hero .btn { display: block; margin: 10px auto; max-width: 250px; }
-    }
+    .testimonial-card .author { font-weight: bold; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .pricing-card { background: #fff; border-radius: 12px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; }
+    .pricing-card.featured { border: 3px solid #ff6f00; transform: scale(1.05); }
+    .pricing-card h3 { font-size: 1.6em; margin-bottom: 10px; }
+    .pricing-card .price { font-size: 2.5em; font-weight: bold; color: #1a237e; margin-bottom: 20px; }
+    .pricing-card ul { list-style: none; margin-bottom: 25px; }
+    .pricing-card ul li { padding: 8px 0; border-bottom: 1px solid #eee; }
+    .contact-info { text-align: center; font-size: 1.2em; }
+    .contact-info p { margin: 15px 0; }
+    .contact-info a { color: #1a237e; text-decoration: none; font-weight: bold; }
+    footer { background: #1a237e; color: #fff; text-align: center; padding: 30px 0; }
+    footer a { color: #ff6f00; }
+    @media (max-width: 768px) { .hero h1 { font-size: 2em; } .about-stats { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <section class="hero">
     <div class="container">
-      <h1>Handyman PRO - DFW</h1>
-      <p>Professional Electrical • Plumbing • Remodeling • Painting • TV Mounting<br>Serving Hurst & the Entire Dallas-Fort Worth Area</p>
-      <div class="btn-group">
-        <a href="tel:12144443288" class="btn btn-primary"><i class="fas fa-phone"></i> Call (214) 444-3288</a>
-        <a href="mailto:handymanprodfw@Gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get a Quote</a>
-      </div>
+      <h1>Handyman PRO DFW</h1>
+      <p>Your Trusted Home Repair & Remodeling Experts in Hurst & the DFW Metroplex</p>
+      <a href="tel:+12144443288" class="btn">📞 (214) 444-3288</a>
+      <a href="mailto:handymanprodfw@Gmail.com" class="btn" style="background:#fff;color:#1a237e;margin-left:10px;">📧 Email Us</a>
     </div>
   </section>
 
-  <section class="services" id="services">
+  <section>
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
-          <i class="fas fa-bolt"></i>
+          <div class="icon">🔧</div>
+          <h3>General Repairs</h3>
+          <p>Fixing everything from leaky faucets to drywall damage. No job too small.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🖌️</div>
+          <h3>Interior Painting</h3>
+          <p>Professional painting services to transform your interior spaces.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">⚡</div>
           <h3>Electrical Services</h3>
-          <p>Expert electrical repairs, outlet and switch installation, lighting upgrades, and panel work. Licensed and insured.</p>
+          <p>Licensed electrical work including outlets, fixtures, and ceiling fans.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-wrench"></i>
+          <div class="icon">🔩</div>
           <h3>Plumbing</h3>
-          <p>From leak repairs to full fixture installations, we handle all residential plumbing needs with precision and care.</p>
+          <p>Pipe repairs, fixture installation, and all residential plumbing needs.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-paint-roller"></i>
-          <h3>Painting</h3>
-          <p>Interior and exterior painting services that breathe new life into your home. Premium paints, flawless finishes.</p>
+          <div class="icon">🏠</div>
+          <h3>Home Remodeling</h3>
+          <p>Full kitchen and bathroom remodels. Custom cabinetry and countertops.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-tools"></i>
-          <h3>Remodeling</h3>
-          <p>Bathroom and kitchen remodels, room additions, and whole-home renovations tailored to your vision and budget.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-tv"></i>
+          <div class="icon">📺</div>
           <h3>TV Mounting</h3>
-          <p>Professional TV mounting and home theater setup. Hidden wires, secure mounting, and perfect placement every time.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-home"></i>
-          <h3>General Handyman</h3>
-          <p>Drywall repair, furniture assembly, shelf installation, caulking, and every odd job in between. No job too small!</p>
+          <p>Professional TV mounting, furniture assembly, and home theater setup.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="about" id="about">
+  <section>
     <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <div class="about-content">
-        <p>Handyman PRO - DFW has been serving Hurst and the greater Dallas-Fort Worth area with dependable, professional home services. We're a full-service handyman company that brings skill, experience, and integrity to every project.</p>
-        <p>Whether it's electrical, plumbing, painting, or a full remodel — we treat your home like it's our own.</p>
+      <h2>Why Choose Handyman PRO DFW?</h2>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="num">200+</div>
+          <div class="label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="num">15+</div>
+          <div class="label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="label">Satisfaction Guarantee</div>
+        </div>
       </div>
-      <div class="stats">
-        <div class="stat">
-          <h3>10+</h3>
-          <p>Years Experience</p>
+      <p style="text-align:center;max-width:800px;margin:30px auto;font-size:1.1em;">
+        We are a locally owned and operated handyman service based in Hurst, TX, serving the entire DFW Metroplex. 
+        Our team brings over 15 years of experience in residential repairs, remodeling, and home improvement. 
+        Licensed, insured, and committed to quality workmanship on every job.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Handyman PRO DFW did an amazing job remodeling our bathroom. Professional, on time, and the quality exceeded our expectations!"</p>
+          <div class="author">- Sarah M., Hurst</div>
         </div>
-        <div class="stat">
-          <h3>800+</h3>
-          <p>Jobs Completed</p>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Called them for a last-minute ceiling fan installation and they came out same day. Fair pricing and excellent work."</p>
+          <div class="author">- James R., Bedford</div>
         </div>
-        <div class="stat">
-          <h3>4.8★</h3>
-          <p>Average Rating</p>
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"I've used them for multiple projects around my house. Always reliable, honest, and the quality is consistently top-notch."</p>
+          <div class="author">- Lisa T., Colleyville</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="testimonials" id="testimonials">
+  <section>
     <div class="container">
-      <h2 class="section-title">Customer Reviews</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Handyman PRO did an incredible job rewiring our kitchen. Professional, clean, and the pricing was very fair. Will definitely call again!"</p>
-          <p class="author">— Amanda K., Hurst</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"They mounted our TV and hid all the wires in the wall. Looks amazing — like a professional home theater setup. Highly recommend!"</p>
-          <p class="author">— David P., Bedford</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Used them for a full bathroom remodel. The team was punctual, communicated well, and the results are stunning. A+ service."</p>
-          <p class="author">— Rachel S., Colleyville</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <h2 class="section-title">Service Pricing</h2>
+      <h2>Pricing Plans</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
           <h3>Quick Fix</h3>
-          <div class="price">$89<span>/trip</span></div>
+          <div class="price">$75</div>
           <ul>
-            <li>Minor Repairs</li>
-            <li>TV Mounting</li>
-            <li>Furniture Assembly</li>
-            <li>1 Hour Labor</li>
-            <li>Free Estimate</li>
+            <li>30-minute job minimum</li>
+            <li>Minor repairs & fixes</li>
+            <li>Free estimate included</li>
+            <li>No travel fee</li>
           </ul>
-          <a href="mailto:handymanprodfw@gmail.com" class="btn">Book Now</a>
+          <a href="tel:+12144443288" class="btn">Book Now</a>
         </div>
         <div class="pricing-card featured">
           <h3>Standard Service</h3>
-          <div class="price">$179<span>/trip</span></div>
+          <div class="price">$95/hr</div>
           <ul>
-            <li>Electrical Repairs</li>
-            <li>Plumbing Fixes</li>
-            <li>Painting (1 Room)</li>
-            <li>3 Hours Labor</li>
-            <li>Free Estimate</li>
+            <li>1-hour minimum</li>
+            <li>All repair & installation</li>
+            <li>Free estimate included</li>
+            <li>Materials included</li>
+            <li>⭐ BEST VALUE</li>
           </ul>
-          <a href="mailto:handymanprodfw@gmail.com" class="btn">Book Now</a>
+          <a href="tel:+12144443288" class="btn">Most Popular</a>
         </div>
         <div class="pricing-card">
-          <h3>Remodeling</h3>
-          <div class="price">$$$<span>Quote</span></div>
+          <h3>Full Remodel</h3>
+          <div class="price">Custom</div>
           <ul>
-            <li>Kitchen Remodel</li>
-            <li>Bathroom Renovation</li>
-            <li>Room Additions</li>
-            <li>Custom Design</li>
-            <li>Free Consultation</li>
+            <li>Kitchen & bathroom remodels</li>
+            <li>Custom carpentry</li>
+            <li>Design consultation</li>
+            <li>Project management</li>
           </ul>
-          <a href="mailto:handymanprodfw@gmail.com" class="btn">Get Quote</a>
+          <a href="tel:+12144443288" class="btn">Get Quote</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <p><i class="fas fa-phone"></i> (214) 444-3288</p>
-          <p><i class="fas fa-envelope"></i> handymanprodfw@Gmail.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Hurst, TX 76053</p>
-        </div>
-        <div class="social-links">
-          <a href="https://www.facebook.com/handymanprodfw" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="mailto:handymanprodfw@Gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
+  <section style="background:#1a237e;color:#fff;">
+    <div class="container contact-info">
+      <h2 style="color:#fff;">Contact Us</h2>
+      <p>📞 <a href="tel:+12144443288" style="color:#ff6f00;">(214) 444-3288</a></p>
+      <p>📧 <a href="mailto:handymanprodfw@Gmail.com" style="color:#ff6f00;">handymanprodfw@Gmail.com</a></p>
+      <p>📍 Hurst, TX 76053</p>
+      <p>🕐 Mon-Sat: 7AM - 7PM | Sun: By Appointment</p>
+      <p style="margin-top:20px;">📘 <a href="https://www.facebook.com/handymanprodfw" style="color:#ff6f00;">Find us on Facebook</a></p>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Handyman PRO - DFW. All rights reserved.</p>
-      <p>Website by <a href="https://eddiejking3rd-web.github.io/texas-business-sites/" target="_blank">SiteCraft Pro</a></p>
+      <p>Handyman PRO DFW | Serving Hurst, Bedford, Euless, Colleyville & All DFW</p>
+      <p style="font-size:0.8em;margin-top:10px;">Website by <a href="mailto:onlbusi56@gmail.com">SiteCraft Pro</a></p>
     </div>
   </footer>
 </body>
