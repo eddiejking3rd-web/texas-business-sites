@@ -3,113 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Website — Choose Your Plan</title>
+    <title>Claim Your Website or Leads — Texas Web Pros</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; color: #1e293b; }
-        .header { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; padding: 60px 20px; text-align: center; }
-        .header h1 { font-size: 2.5rem; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
-        .plan { background: white; border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; border: 2px solid #e2e8f0; transition: all 0.2s; position: relative; }
-        .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-        .plan.featured { border-color: #2563eb; box-shadow: 0 4px 20px rgba(37,99,235,0.15); }
-        .plan .badge { font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
-        .plan.featured .badge { background: #2563eb; color: white; padding: 4px 16px; border-radius: 20px; }
-        .plan .name { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
-        .plan .price { font-size: 3rem; font-weight: 800; color: #1e3a5f; }
-        .plan .price span { font-size: 1rem; font-weight: 400; color: #64748b; }
-        .plan ul { list-style: none; text-align: left; margin: 20px 0 28px; }
-        .plan ul li { padding: 8px 0; font-size: 0.95rem; color: #475569; }
-        .plan ul li::before { content: "✅ "; }
-        .plan ul li.missing { color: #94a3b8; }
-        .plan ul li.missing::before { content: "— "; }
-        .btn { display: inline-block; padding: 16px 32px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: all 0.15s; width: 100%; box-sizing: border-box; }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-primary { background: #2563eb; color: white; }
-        .btn-green { background: #22c55e; color: white; }
-        .btn-best { background: linear-gradient(135deg, #2563eb, #7c3aed); color: white; }
-        .text-center { text-align: center; }
-        .subtitle { color: #64748b; margin-top: 8px; font-size: 1.1rem; }
-        .footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.85rem; }
-        .note { font-size: 0.85rem; color: #94a3b8; margin-top: 12px; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        .header { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; width: 100%; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2rem; margin-bottom: 8px; }
+        .header p { opacity: 0.9; font-size: 1.05rem; }
+        .container { max-width: 800px; width: 100%; margin: 30px 20px; }
+        .tab-bar { display: flex; gap: 4px; margin-bottom: 30px; background: #e2e8f0; border-radius: 12px; padding: 4px; }
+        .tab { flex: 1; padding: 14px; text-align: center; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 0.95rem; color: #64748b; transition: all 0.2s; border: none; background: none; }
+        .tab.active { background: white; color: #1e3a5f; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .tab:hover:not(.active) { color: #334155; }
+        .plans { display: none; }
+        .plans.active { display: block; }
+        .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .plan-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; border: 2px solid #e2e8f0; transition: all 0.2s; cursor: pointer; position: relative; }
+        .plan-card:hover { border-color: #2563eb; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .plan-card.selected { border-color: #2563eb; background: #eff6ff; }
+        .plan-card.featured { border-color: #f59e0b; }
+        .plan-card.featured::before { content: "⭐ BEST SELLER"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #f59e0b; color: white; padding: 4px 16px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; }
+        .plan-card .icon { font-size: 2rem; margin-bottom: 10px; }
+        .plan-card h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 4px; }
+        .plan-card .price { font-size: 2rem; font-weight: 800; color: #1e3a5f; margin: 8px 0; }
+        .plan-card .price small { font-size: 0.8rem; font-weight: 400; color: #64748b; }
+        .plan-card ul { list-style: none; text-align: left; margin: 12px 0; }
+        .plan-card ul li { padding: 5px 0; font-size: 0.85rem; border-bottom: 1px solid #f1f5f9; }
+        .plan-card ul li::before { content: "✅ "; }
+        .plan-card .btn-select { margin-top: 12px; padding: 10px 24px; border-radius: 8px; border: none; font-weight: 600; background: #e2e8f0; color: #64748b; cursor: pointer; width: 100%; font-size: 0.95rem; }
+        .plan-card.selected .btn-select { background: #2563eb; color: white; }
+        .plan-card .btn-select:hover { opacity: 0.9; }
+        .form-card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-top: 20px; display: none; }
+        .form-card.visible { display: block; }
+        .form-card label { display: block; font-weight: 600; margin: 14px 0 5px; color: #334155; font-size: 0.9rem; }
+        .form-card input, .form-card select, .form-card textarea { width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s; }
+        .form-card input:focus, .form-card select:focus, .form-card textarea:focus { outline: none; border-color: #2563eb; }
+        .form-card textarea { min-height: 60px; resize: vertical; }
+        .form-card .btn-submit { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; border: none; padding: 14px 32px; font-size: 1.1rem; font-weight: 700; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 20px; transition: opacity 0.2s; }
+        .form-card .btn-submit:hover { opacity: 0.9; }
+        .form-card .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+        .payment-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+        .payment-opt { border: 2px solid #e2e8f0; border-radius: 10px; padding: 14px; text-align: center; cursor: pointer; transition: all 0.2s; }
+        .payment-opt:hover { border-color: #2563eb; background: #f0f7ff; }
+        .payment-opt.selected { border-color: #2563eb; background: #eff6ff; }
+        .payment-opt .picon { font-size: 1.5rem; margin-bottom: 4px; }
+        .payment-opt .pname { font-weight: 600; font-size: 0.85rem; }
+        .success-msg { display: none; background: #dcfce7; border: 2px solid #22c55e; border-radius: 12px; padding: 30px; text-align: center; margin-top: 20px; }
+        .success-msg .check { font-size: 3rem; margin-bottom: 12px; }
+        .success-msg h2 { color: #15803d; margin-bottom: 8px; }
+        .success-msg p { color: #166534; }
+        .back-link { display: inline-block; margin-top: 16px; color: #64748b; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { color: #1e3a5f; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.5rem; } .plan-grid { grid-template-columns: 1fr; } .payment-options { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Get Your Business Online Today</h1>
-        <p>Professional websites built for Texas businesses. Live within 24 hours.</p>
+        <h1>🏠 Texas Web Pros</h1>
+        <p>Websites & Lead Generation for Texas Service Businesses</p>
     </div>
+
     <div class="container">
-        <p class="text-center subtitle">Choose the plan that fits your business</p>
-        <div class="plans">
+        <div class="tab-bar" id="tabBar">
+            <button class="tab active" data-tab="websites" onclick="switchTab('websites')">🌐 Websites</button>
+            <button class="tab" data-tab="leads" onclick="switchTab('leads')">📊 Lead Generation</button>
+        </div>
 
-            <!-- Plan 1: Demo Site -->
-            <div class="plan">
-                <div class="badge">&#x1f525; Demo Site</div>
-                <div class="name">Your Demo Site</div>
-                <div class="price">$247 <span>one-time</span></div>
-                <ul>
-                    <li>The site you see on your demo page</li>
-                    <li>Mobile-friendly design</li>
-                    <li>Services, pricing and gallery pages</li>
-                    <li>Contact form and lead capture</li>
-                    <li>Google Maps integration</li>
-                    <li>Hosting on fast servers</li>
-                    <li class="missing">No custom domain name</li>
-                    <li class="missing">No SEO optimization</li>
-                    <li class="missing">No ongoing support</li>
-                </ul>
-                <a href="https://buy.stripe.com/3cIdR9dGs7126Or1rkgQE03" target="_blank" rel="noopener" class="btn btn-primary">Buy Now - $247</a>
-                <div class="note">Your demo site is already live!</div>
-            </div>
-
-            <!-- Plan 2: Premium Bundle -->
-            <div class="plan featured">
-                <div class="badge">&#x2b50; BEST VALUE</div>
-                <div class="name">Premium Bundle</div>
-                <div class="price">$497 <span>one-time</span></div>
-                <ul>
-                    <li>Everything in Demo Site, PLUS:</li>
-                    <li>Custom .com domain name (free 1yr)</li>
-                    <li>Full SEO optimization</li>
-                    <li>Google Business Profile setup</li>
-                    <li>Lead gen report (20+ local leads)</li>
-                    <li>3 months priority support</li>
-                    <li>Monthly performance report</li>
-                    <li>Social media profile setup</li>
-                </ul>
-                <a href="https://buy.stripe.com/4gM5kD9qcade2ybgmegQE05" target="_blank" rel="noopener" class="btn btn-best">Get the Bundle - $497</a>
-                <div class="note">Save $97 vs buying separately!</div>
-            </div>
-
-            <!-- Plan 3: Real Estate Premium -->
-            <div class="plan">
-                <div class="badge">Agent</div>
-                <div class="name">Real Estate Premium</div>
-                <div class="price">$497 <span>one-time</span></div>
-                <ul>
-                    <li>Everything in Demo Site, PLUS:</li>
-                    <li>Custom .com domain (free 1yr)</li>
-                    <li>IDX-ready property pages</li>
-                    <li>SEO for local search</li>
-                    <li>Google Business Profile setup</li>
-                    <li>Lead gen report (realtor leads)</li>
-                    <li>3 months priority support</li>
-                    <li>Social media profile setup</li>
-                </ul>
-                <a href="https://buy.stripe.com/4gM5kD9qcade2ybgmegQE05" target="_blank" rel="noopener" class="btn btn-best">Get Agent Bundle - $497</a>
-                <div class="note">Same price, realtor-specific value</div>
+        <!-- WEBSITES TAB -->
+        <div class="plans active" id="tab-websites">
+            <div class="plan-grid">
+                <div class="plan-card" data-plan="starter" onclick="selectPlan('starter')">
+                    <div class="icon">🚀</div>
+                    <h3>Starter</h3>
+                    <div class="price">$35 <small>/mo</small></div>
+                    <ul>
+                        <li>Single page website</li>
+                        <li>Mobile responsive design</li>
+                        <li>Contact form</li>
+                        <li>Free hosting</li>
+                        <li>Free domain (.com)</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
+                <div class="plan-card featured" data-plan="professional" onclick="selectPlan('professional')">
+                    <div class="icon">🔥</div>
+                    <h3>Professional</h3>
+                    <div class="price">$50 <small>/mo</small></div>
+                    <ul>
+                        <li>Multi-page website (up to 5)</li>
+                        <li>Mobile responsive design</li>
+                        <li>Google Maps integration</li>
+                        <li>Photo gallery</li>
+                        <li>Blog / news section</li>
+                        <li>Contact form & lead capture</li>
+                        <li>Free domain & hosting</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
+                <div class="plan-card" data-plan="premium" onclick="selectPlan('premium')">
+                    <div class="icon">⚡</div>
+                    <h3>Premium</h3>
+                    <div class="price">$75 <small>/mo</small></div>
+                    <ul>
+                        <li>Everything in Professional</li>
+                        <li>Full SEO optimization</li>
+                        <li>Google Analytics setup</li>
+                        <li>Social media integration</li>
+                        <li>Priority support</li>
+                        <li>Monthly performance report</li>
+                        <li>Free domain & hosting</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
             </div>
         </div>
 
-        <div class="text-center" style="margin-top: 20px;">
-            <p style="color: #64748b;">Questions? Email <a href="mailto:onlbusi56@gmail.com" style="color: #2563eb;">onlbusi56@gmail.com</a></p>
-            <p style="margin-top: 8px; color: #94a3b8; font-size: 0.9rem;">All payments processed securely by Stripe</p>
+        <!-- LEADS TAB -->
+        <div class="plans" id="tab-leads">
+            <div class="plan-grid">
+                <div class="plan-card" data-plan="leads-basic" onclick="selectPlan('leads-basic')">
+                    <div class="icon">📊</div>
+                    <h3>Leads Starter</h3>
+                    <div class="price">$97 <small>/mo</small></div>
+                    <ul>
+                        <li>10 qualified leads/month</li>
+                        <li>Local service businesses</li>
+                        <li>Email & phone included</li>
+                        <li>Verified no website</li>
+                        <li>CSV export</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
+                <div class="plan-card featured" data-plan="leads-pro" onclick="selectPlan('leads-pro')">
+                    <div class="icon">📈</div>
+                    <h3>Leads Pro</h3>
+                    <div class="price">$197 <small>/mo</small></div>
+                    <ul>
+                        <li>25 qualified leads/month</li>
+                        <li>Local service businesses</li>
+                        <li>Email & phone included</li>
+                        <li>Verified no website</li>
+                        <li>Demo site built for each lead</li>
+                        <li>Outreach email templates</li>
+                        <li>CSV export</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
+                <div class="plan-card" data-plan="leads-premium" onclick="selectPlan('leads-premium')">
+                    <div class="icon">🏆</div>
+                    <h3>Leads Premium</h3>
+                    <div class="price">$497 <small>/mo</small></div>
+                    <ul>
+                        <li>100 qualified leads/month</li>
+                        <li>Home services + real estate</li>
+                        <li>Email & phone included</li>
+                        <li>Verified no website</li>
+                        <li>Demo site built for each lead</li>
+                        <li>Full outreach campaign</li>
+                        <li>Daily email delivery</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-select">Select</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAYMENT METHOD -->
+        <div class="form-card visible" id="paymentSection" style="display:none;">
+            <h3 style="margin-bottom: 12px;">Select Payment Method</h3>
+            <div class="payment-options" id="paymentOptions">
+                <div class="payment-opt" data-method="paypal" onclick="selectPayment('paypal')">
+                    <div class="picon">💳</div>
+                    <div class="pname">PayPal</div>
+                </div>
+                <div class="payment-opt" data-method="venmo" onclick="selectPayment('venmo')">
+                    <div class="picon">📱</div>
+                    <div class="pname">Venmo</div>
+                </div>
+                <div class="payment-opt" data-method="stripe" onclick="selectPayment('stripe')">
+                    <div class="picon">💎</div>
+                    <div class="pname">Stripe</div>
+                </div>
+                <div class="payment-opt" data-method="cashapp" onclick="selectPayment('cashapp')">
+                    <div class="picon">💵</div>
+                    <div class="pname">Cash App</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO FORM -->
+        <div class="form-card" id="formSection">
+            <h3 style="margin-bottom: 12px;">Your Information</h3>
+            <form id="purchaseForm" onsubmit="submitForm(event)">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" required placeholder="John Smith">
+
+                <label for="business">Business Name *</label>
+                <input type="text" id="business" required placeholder="Your Business Name">
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" required placeholder="you@email.com">
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(555) 555-5555">
+
+                <label for="notes">Notes or Special Requests</label>
+                <textarea id="notes" placeholder="Any specific features or questions..."></textarea>
+
+                <input type="hidden" id="selectedPlan" value="">
+                <input type="hidden" id="selectedPayment" value="">
+                <input type="hidden" id="sourceUrl" value="">
+
+                <button type="submit" class="btn-submit" id="submitBtn">🚀 Submit Request</button>
+            </form>
+        </div>
+
+        <div class="success-msg" id="successMsg">
+            <div class="check">✅</div>
+            <h2>Thank You!</h2>
+            <p>Your request has been received. We'll send you payment instructions within 24 hours.</p>
+            <a href="/" class="back-link">← Back to site portal</a>
         </div>
     </div>
-    <div class="footer">
-        <p>Powered by Stripe - Your data is encrypted and secure</p>
-    </div>
+
+    <script>
+        document.getElementById('sourceUrl').value = window.location.href;
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+            document.querySelectorAll('.plans').forEach(p => p.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            // Reset selections
+            document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('paymentSection').style.display = 'none';
+            document.getElementById('formSection').classList.remove('visible');
+        }
+
+        function selectPlan(plan) {
+            document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+            document.querySelector(`[data-plan="${plan}"]`).classList.add('selected');
+            document.getElementById('selectedPlan').value = plan;
+            document.getElementById('paymentSection').style.display = 'block';
+            document.getElementById('formSection').classList.add('visible');
+        }
+
+        function selectPayment(method) {
+            document.querySelectorAll('.payment-opt').forEach(p => p.classList.remove('selected'));
+            document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+            document.getElementById('selectedPayment').value = method;
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const form = document.getElementById('purchaseForm');
+
+            if (!document.getElementById('selectedPlan').value) {
+                alert('Please select a plan first.');
+                return;
+            }
+            if (!document.getElementById('selectedPayment').value) {
+                alert('Please select a payment method.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = '⏳ Sending...';
+
+            const data = {
+                name: document.getElementById('name').value,
+                business: document.getElementById('business').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                plan: document.getElementById('selectedPlan').value,
+                payment: document.getElementById('selectedPayment').value,
+                notes: document.getElementById('notes').value,
+                source: document.getElementById('sourceUrl').value
+            };
+
+            try {
+                const response = await fetch('/api/purchase', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('paymentSection').style.display = 'none';
+                    document.getElementById('successMsg').style.display = 'block';
+                } else {
+                    throw new Error('API error');
+                }
+            } catch(err) {
+                // Mailto fallback
+                const mailto = `mailto:onlbusi56@gmail.com?subject=${encodeURIComponent('Website/Leads Purchase - ' + data.business)}&body=${encodeURIComponent(
+                    `Name: ${data.name}\nBusiness: ${data.business}\nEmail: ${data.email}\nPhone: ${data.phone}\nPlan: ${data.plan}\nPayment: ${data.payment}\nNotes: ${data.notes}\nSource: ${data.source}`
+                )}`;
+                window.location.href = mailto;
+                form.style.display = 'none';
+                document.getElementById('paymentSection').style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
