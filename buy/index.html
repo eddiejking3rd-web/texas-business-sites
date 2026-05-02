@@ -3,157 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Your Website — 47</title>
-    <script src="https://js.stripe.com/v3/"></script>
+    <title>Get Your Website — Choose Your Plan</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; color: #1e293b; }
         .header { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; padding: 60px 20px; text-align: center; }
         .header h1 { font-size: 2.5rem; }
-        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
-        .card { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 24px; }
-        .card h2 { color: #1e3a5f; margin-bottom: 16px; }
-        .pricing { text-align: center; padding: 30px; background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; border-radius: 16px; margin-bottom: 24px; }
-        .pricing .price { font-size: 4rem; font-weight: 800; }
-        .pricing .sub { font-size: 1.1rem; opacity: 0.85; }
-        .pricing ul { list-style: none; margin: 24px 0; text-align: left; display: inline-block; }
-        .pricing ul li { padding: 8px 0; font-size: 1rem; }
-        .pricing ul li::before { content: "✅ "; }
-        .btn-stripe { display: block; width: 100%; padding: 18px; background: #22c55e; color: white; border: none; border-radius: 12px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-        .btn-stripe:hover { background: #16a34a; }
-        .btn-stripe:disabled { background: #94a3b8; cursor: not-allowed; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: #475569; }
-        .form-group input, .form-group select { width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
-        .form-group input:focus { border-color: #2563eb; outline: none; }
-        #error-message { color: #dc2626; margin-top: 12px; display: none; }
-        #success-message { display: none; text-align: center; padding: 40px; }
-        #success-message h2 { color: #16a34a; }
-        .label-badge { display: inline-block; font-size: 0.75rem; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .plan { background: white; border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; border: 2px solid #e2e8f0; transition: all 0.2s; position: relative; }
+        .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .plan.featured { border-color: #2563eb; box-shadow: 0 4px 20px rgba(37,99,235,0.15); }
+        .plan .badge { font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 12px; }
+        .plan.featured .badge { background: #2563eb; color: white; padding: 4px 16px; border-radius: 20px; }
+        .plan .name { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+        .plan .price { font-size: 3rem; font-weight: 800; color: #1e3a5f; }
+        .plan .price span { font-size: 1rem; font-weight: 400; color: #64748b; }
+        .plan ul { list-style: none; text-align: left; margin: 20px 0 28px; }
+        .plan ul li { padding: 8px 0; font-size: 0.95rem; color: #475569; }
+        .plan ul li::before { content: "✅ "; }
+        .plan ul li.missing { color: #94a3b8; }
+        .plan ul li.missing::before { content: "— "; }
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: all 0.15s; width: 100%; box-sizing: border-box; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: #2563eb; color: white; }
+        .btn-green { background: #22c55e; color: white; }
+        .btn-best { background: linear-gradient(135deg, #2563eb, #7c3aed); color: white; }
+        .text-center { text-align: center; }
+        .subtitle { color: #64748b; margin-top: 8px; font-size: 1.1rem; }
+        .footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.85rem; }
+        .note { font-size: 0.85rem; color: #94a3b8; margin-top: 12px; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🚀 Claim Your Professional Website</h1>
-        <p>One-time fee — no monthly charges. Site goes live within 24 hours.</p>
+        <h1>Get Your Business Online Today</h1>
+        <p>Professional websites built for Texas businesses. Live within 24 hours.</p>
     </div>
     <div class="container">
-        <div class="pricing">
-            <div class="price">47</div>
-            <div class="sub">One-time payment • Lifetime ownership</div>
-            <ul>
-                <li>Custom-designed website for your business</li>
-                <li>Mobile-friendly & fast loading</li>
-                <li>Services, pricing & gallery pages</li>
-                <li>Contact forms & lead capture</li>
-                <li>Google Maps integration</li>
-                <li>Free .com domain name</li>
-            </ul>
+        <p class="text-center subtitle">Choose the plan that fits your business</p>
+        <div class="plans">
+
+            <!-- Plan 1: Demo Site -->
+            <div class="plan">
+                <div class="badge">&#x1f525; Demo Site</div>
+                <div class="name">Your Demo Site</div>
+                <div class="price">$247 <span>one-time</span></div>
+                <ul>
+                    <li>The site you see on your demo page</li>
+                    <li>Mobile-friendly design</li>
+                    <li>Services, pricing and gallery pages</li>
+                    <li>Contact form and lead capture</li>
+                    <li>Google Maps integration</li>
+                    <li>Hosting on fast servers</li>
+                    <li class="missing">No custom domain name</li>
+                    <li class="missing">No SEO optimization</li>
+                    <li class="missing">No ongoing support</li>
+                </ul>
+                <a href="https://buy.stripe.com/3cIdR9dGs7126Or1rkgQE03" target="_blank" rel="noopener" class="btn btn-primary">Buy Now - $247</a>
+                <div class="note">Your demo site is already live!</div>
+            </div>
+
+            <!-- Plan 2: Premium Bundle -->
+            <div class="plan featured">
+                <div class="badge">&#x2b50; BEST VALUE</div>
+                <div class="name">Premium Bundle</div>
+                <div class="price">$497 <span>one-time</span></div>
+                <ul>
+                    <li>Everything in Demo Site, PLUS:</li>
+                    <li>Custom .com domain name (free 1yr)</li>
+                    <li>Full SEO optimization</li>
+                    <li>Google Business Profile setup</li>
+                    <li>Lead gen report (20+ local leads)</li>
+                    <li>3 months priority support</li>
+                    <li>Monthly performance report</li>
+                    <li>Social media profile setup</li>
+                </ul>
+                <a href="https://buy.stripe.com/4gM5kD9qcade2ybgmegQE05" target="_blank" rel="noopener" class="btn btn-best">Get the Bundle - $497</a>
+                <div class="note">Save $97 vs buying separately!</div>
+            </div>
+
+            <!-- Plan 3: Real Estate Premium -->
+            <div class="plan">
+                <div class="badge">Agent</div>
+                <div class="name">Real Estate Premium</div>
+                <div class="price">$497 <span>one-time</span></div>
+                <ul>
+                    <li>Everything in Demo Site, PLUS:</li>
+                    <li>Custom .com domain (free 1yr)</li>
+                    <li>IDX-ready property pages</li>
+                    <li>SEO for local search</li>
+                    <li>Google Business Profile setup</li>
+                    <li>Lead gen report (realtor leads)</li>
+                    <li>3 months priority support</li>
+                    <li>Social media profile setup</li>
+                </ul>
+                <a href="https://buy.stripe.com/4gM5kD9qcade2ybgmegQE05" target="_blank" rel="noopener" class="btn btn-best">Get Agent Bundle - $497</a>
+                <div class="note">Same price, realtor-specific value</div>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Your Information</h2>
-            <div class="form-group">
-                <label>Business Name</label>
-                <input type="text" id="business-name" placeholder="e.g. ABC Lawn Service" />
-            </div>
-            <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" id="customer-name" placeholder="John Smith" />
-            </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="customer-email" placeholder="john@example.com" />
-            </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" id="customer-phone" placeholder="(555) 123-4567" />
-            </div>
-            <div class="form-group">
-                <label>Website Type</label>
-                <select id="site-type">
-                    <option value="home-service">Home Service Business (Lawn, Handyman, Painting, etc.)</option>
-                    <option value="real-estate">Real Estate Agent</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <button id="checkout-button" class="btn-stripe">💳 Pay 47 & Claim Your Site</button>
-            <div id="error-message"></div>
-        </div>
-
-        <div id="success-message">
-            <div style="font-size: 4rem; margin-bottom: 20px;">🎉</div>
-            <h2>Payment Successful!</h2>
-            <p style="margin-top: 12px; font-size: 1.1rem;">We'll be in touch within 24 hours to get your site live.</p>
-            <p style="margin-top: 8px; color: #64748b;">Check your email for confirmation details.</p>
-        </div>
-
-        <div style="text-align: center; padding: 20px; color: #94a3b8; font-size: 0.85rem;">
-            <p>🔒 Secure payment powered by Stripe</p>
-            <p>Your information is encrypted and never stored on this site</p>
+        <div class="text-center" style="margin-top: 20px;">
+            <p style="color: #64748b;">Questions? Email <a href="mailto:onlbusi56@gmail.com" style="color: #2563eb;">onlbusi56@gmail.com</a></p>
+            <p style="margin-top: 8px; color: #94a3b8; font-size: 0.9rem;">All payments processed securely by Stripe</p>
         </div>
     </div>
-
-    <script>
-        const stripe = Stripe('pk_live_51MUJaSHCEgmvI6cJhy4QwzHzOo3u9cvBUJWRxoOfH5QSGmXGnPzOXUggplQxfHiaU6OfIdcyv0hkQcg6svtF2y4A00d5RfXHEo');
-        const checkoutBtn = document.getElementById('checkout-button');
-
-        checkoutBtn.addEventListener('click', async () => {
-            const businessName = document.getElementById('business-name').value.trim();
-            const customerName = document.getElementById('customer-name').value.trim();
-            const customerEmail = document.getElementById('customer-email').value.trim();
-            const customerPhone = document.getElementById('customer-phone').value.trim();
-            const siteType = document.getElementById('site-type').value;
-            const errorEl = document.getElementById('error-message');
-
-            if (!businessName || !customerName || !customerEmail) {
-                errorEl.textContent = 'Please fill in business name, your name, and email.';
-                errorEl.style.display = 'block';
-                return;
-            }
-            errorEl.style.display = 'none';
-            checkoutBtn.disabled = true;
-            checkoutBtn.textContent = 'Processing...';
-
-            try {
-                // Create Stripe Checkout Session via our server
-                const priceId = 'price_1TSVD1HCEgmvI6cJDZQ8ML2k';
-                const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: new URLSearchParams({
-                        'success_url': window.location.origin + '/buy/success.html?session_id={CHECKOUT_SESSION_ID}',
-                        'cancel_url': window.location.origin + '/buy/',
-                        'mode': 'payment',
-                        'line_items[0][price]': priceId,
-                        'line_items[0][quantity]': 1,
-                        'customer_email': customerEmail,
-                        'metadata[business_name]': businessName,
-                        'metadata[customer_name]': customerName,
-                        'metadata[phone]': customerPhone,
-                        'metadata[site_type]': siteType,
-                    })
-                });
-
-                const session = await response.json();
-                if (session.error) {
-                    throw new Error(session.error.message || session.error);
-                }
-
-                // Redirect to Stripe Checkout
-                const result = await stripe.redirectToCheckout({ sessionId: session.id });
-                if (result.error) {
-                    throw new Error(result.error.message);
-                }
-            } catch (err) {
-                errorEl.textContent = 'Error: ' + err.message;
-                errorEl.style.display = 'block';
-                checkoutBtn.disabled = false;
-                checkoutBtn.textContent = '💳 Pay $247 & Claim Your Site';
-            }
-        });
-    </script>
+    <div class="footer">
+        <p>Powered by Stripe - Your data is encrypted and secure</p>
+    </div>
 </body>
 </html>
