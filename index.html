@@ -3,107 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texas Business Sites</title>
+    <title>Texas Business Demo Sites</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: system-ui, sans-serif; background: #f1f5f9; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f1f5f9; min-height: 100vh; }
         .header { background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; padding: 60px 20px; text-align: center; }
-        .header h1 { font-size: 2.5rem; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-        .card { background: white; border-radius: 10px; padding: 20px; text-align: center; text-decoration: none; color: #1e293b; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: transform 0.15s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-        .card h3 { font-size: 0.95rem; }
-        .badge { display: inline-block; font-size: 0.7rem; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 8px; margin-top: 6px; }
-        .footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.85rem; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 12px; padding: 24px; text-align: center; text-decoration: none; color: #1e293b; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+        .card p { font-size: 0.85rem; color: #64748b; }
+        .footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🏠 Texas Business Demo Sites</h1>
-        <p>Professional websites built for local Texas businesses</p>
-    
-    <!-- May 2 Batch -->
-    <a href="/texas-business-sites/fr-handyman-remodeling/" class="site-card" style="display:block;background:linear-gradient(135deg,#2c3e50,#3498db);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>FR Handyman &amp; Remodeling</strong><br><small>La Porte, TX — Handyman</small>
-    </a>
-    <a href="/texas-business-sites/kens-handyman-remodeling/" class="site-card" style="display:block;background:linear-gradient(135deg,#1a3a5c,#2d5f8a);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Ken's Handyman &amp; Remodeling</strong><br><small>Dallas, TX — Remodeling</small>
-    </a>
-    <a href="/texas-business-sites/best-lawn-landscaping/" class="site-card" style="display:block;background:linear-gradient(135deg,#1a4a1a,#2d8a2d);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Best Lawn &amp; Landscaping</strong><br><small>Dallas, TX — Lawn Care</small>
-    </a>
-    <a href="/texas-business-sites/brookside-lawn-tree/" class="site-card" style="display:block;background:linear-gradient(135deg,#3d5a2e,#6b8e4e);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Brookside Lawn &amp; Tree</strong><br><small>Waxahachie, TX — Tree &amp; Lawn</small>
-    </a>
-    <a href="/texas-business-sites/gabes-lawn-care/" class="site-card" style="display:block;background:linear-gradient(135deg,#2d5016,#4a8c2a);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Gabe's Lawn Care</strong><br><small>McAllen, TX — Landscaping</small>
-    </a>
-    <a href="/texas-business-sites/jessica-hurst-realtor/" class="site-card" style="display:block;background:linear-gradient(135deg,#1a2a3a,#2c3e50);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Jessica Hurst</strong><br><small>Waco, TX — Realtor</small>
-    </a>
-    <a href="/texas-business-sites/cody-berry-realtor/" class="site-card" style="display:block;background:linear-gradient(135deg,#2c1810,#5c3a28);border-radius:10px;padding:1.5rem;color:white;text-decoration:none;text-align:center">
-        <strong>Cody Berry</strong><br><small>Waco, TX — Realtor</small>
-    </a>
-</div>
+        <h1>🏠 Texas Demo Sites</h1>
+        <p>Professional websites built for local businesses</p>
+    </div>
     <div class="container">
         <div class="grid">
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/1st-fence-waco/" class="card"><h3>1st Fence Waco</h3><div class="badge">🏗️ Concrete & Fence</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/254-mobile-detail/" class="card"><h3>254 Mobile Detail</h3><div class="badge">🚗 Detailing</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/aquamax-pressure-washing/" class="card"><h3>Aquamax Pressure Washing</h3><div class="badge">💦 Pressure Washing</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/blog-2026-04-26/" class="card"><h3>Blog 2026 04 26</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/ca-tree-lawn/" class="card"><h3>Ca Tree Lawn</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/chuys-tree-service/" class="card"><h3>Chuys Tree Service</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/dallas-handyman/" class="card"><h3>Dallas Handyman</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/dallas-handyman-remodeling/" class="card"><h3>Dallas Handyman Remodeling</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/east-texas-landscaping/" class="card"><h3>East Texas Landscaping</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/first-choice-painting/" class="card"><h3>First Choice Painting</h3><div class="badge">🎨 Painting</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/gerrys-welding-fencing/" class="card"><h3>Gerrys Welding Fencing</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/gregs-concrete-cleaning/" class="card"><h3>Gregs Concrete Cleaning</h3><div class="badge">🏗️ Concrete & Fence</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/gritten-wrecker/" class="card"><h3>Gritten Wrecker</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/guzmans-lawn-care/" class="card"><h3>Guzmans Lawn Care</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/handyman-pro-dfw/" class="card"><h3>Handyman Pro Dfw</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/handyman-services-more/" class="card"><h3>Handyman Services More</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/hauladaze/" class="card"><h3>Hauladaze</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/heights-handyman/" class="card"><h3>Heights Handyman</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/hydro-wash/" class="card"><h3>Hydro Wash</h3><div class="badge">💦 Pressure Washing</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/jeannine-mulkey-realtor/" class="card"><h3>Jeannine Mulkey Realtor</h3><div class="badge">🏡 Real Estate</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/jj-concrete-fences/" class="card"><h3>Jj Concrete Fences</h3><div class="badge">🏗️ Concrete & Fence</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/jko-lawn-tree/" class="card"><h3>Jko Lawn Tree</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/lakeside-handyman/" class="card"><h3>Lakeside Handyman</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/league-city-handyman/" class="card"><h3>League City Handyman</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/motex-construction/" class="card"><h3>Motex Construction</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/painting/" class="card"><h3>Painting</h3><div class="badge">🎨 Painting</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/pooch-parlor/" class="card"><h3>Pooch Parlor</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/powerwashing-houston/" class="card"><h3>Powerwashing Houston</h3><div class="badge">💦 Pressure Washing</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/pressure-wash/" class="card"><h3>Pressure Wash</h3><div class="badge">💦 Pressure Washing</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/rc-landscaping/" class="card"><h3>Rc Landscaping</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/reyes-painting/" class="card"><h3>Reyes Painting</h3><div class="badge">🎨 Painting</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/reymundo-tree-service/" class="card"><h3>Reymundo Tree Service</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/riverside-pw/" class="card"><h3>Riverside Pw</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/ses-lawn-service/" class="card"><h3>Ses Lawn Service</h3><div class="badge">🌿 Lawn & Tree</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/seven-acre-remodeling/" class="card"><h3>Seven Acre Remodeling</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/texas-pro-painting/" class="card"><h3>Texas Pro Painting</h3><div class="badge">🎨 Painting</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/texas-pro-services/" class="card"><h3>Texas Pro Services</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/the-handyman-co/" class="card"><h3>The Handyman Co</h3><div class="badge">🔧 Handyman</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/total-concrete-fence/" class="card"><h3>Total Concrete Fence</h3><div class="badge">🏗️ Concrete & Fence</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/triple-l-paint/" class="card"><h3>Triple L Paint</h3><div class="badge">🎨 Painting</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/xtreme-xterior/" class="card"><h3>Xtreme Xterior</h3><div class="badge">🔨 Home Service</div></a>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/yesica-ruiz-realtor/" class="card"><h3>Yesica Ruiz Realtor</h3><div class="badge">🏡 Real Estate</div></a>
+            <a href="/8up-pressure-washing-and-rv-detailing/" class="card">8Up Pressure Washing And Rv Detailing</a>
+<a href="/aquamax-pressure-washing/" class="card">Aquamax Pressure Washing</a>
+<a href="/browns-family-pressure-washing/" class="card">Browns Family Pressure Washing</a>
+<a href="/buy/" class="card">Buy</a>
+<a href="/central-texas-pressure-washing-services/" class="card">Central Texas Pressure Washing Services</a>
+<a href="/chapman-pressure-washing/" class="card">Chapman Pressure Washing</a>
+<a href="/clean-cut-lawn-care/" class="card">Clean Cut Lawn Care</a>
+<a href="/co-town-lawn-care/" class="card">Co Town Lawn Care</a>
+<a href="/cody-berry-realtor/" class="card">Cody Berry Realtor</a>
+<a href="/d-solis-pressure-washing/" class="card">D Solis Pressure Washing</a>
+<a href="/first-choice-painting/" class="card">First Choice Painting</a>
+<a href="/good-tymes-pressure-washing/" class="card">Good Tymes Pressure Washing</a>
+<a href="/grassworx-plus-lawn-and-tree/" class="card">Grassworx Plus Lawn And Tree</a>
+<a href="/honeywill-handy-man/" class="card">Honeywill Handy Man</a>
+<a href="/jasons-lawn-care-and-landscaping/" class="card">Jasons Lawn Care And Landscaping</a>
+<a href="/jeannine-mulkey-realtor/" class="card">Jeannine Mulkey Realtor</a>
+<a href="/jessica-hurst-realtor/" class="card">Jessica Hurst Realtor</a>
+<a href="/jj-lawn-service/" class="card">Jj Lawn Service</a>
+<a href="/lmg-solutions-lawn-care/" class="card">Lmg Solutions Lawn Care</a>
+<a href="/martinez-lawn-care/" class="card">Martinez Lawn Care</a>
+<a href="/mercedes-lane-realtor/" class="card">Mercedes Lane Realtor</a>
+<a href="/pablos-lawn-service-and-handyman/" class="card">Pablos Lawn Service And Handyman</a>
+<a href="/prowash-wizard/" class="card">Prowash Wizard</a>
+<a href="/ses-lawn-service/" class="card">Ses Lawn Service</a>
+<a href="/seven-acre-remodeling/" class="card">Seven Acre Remodeling</a>
+<a href="/ss-lawn-care/" class="card">Ss Lawn Care</a>
+<a href="/texas-pressure-washing/" class="card">Texas Pressure Washing</a>
+<a href="/texas-pro-painting/" class="card">Texas Pro Painting</a>
+<a href="/texas-pure-pressure/" class="card">Texas Pure Pressure</a>
+<a href="/texas-surface-cleaning--903-pressure-washing/" class="card">Texas Surface Cleaning  903 Pressure Washing</a>
+<a href="/the-handyman-co/" class="card">The Handyman Co</a>
+<a href="/vianey-suarez-realtor/" class="card">Vianey Suarez Realtor</a>
+<a href="/yesica-ruiz-realtor/" class="card">Yesica Ruiz Realtor</a>
 
-        </div>
-    </div>
-    
-    </div>
-    <div style="text-align: center; margin-top: 48px; margin-bottom: 20px;">
-        <div style="background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; padding: 60px 40px; border-radius: 20px; max-width: 600px; margin: 0 auto;">
-            <h2 style="font-size: 2rem; margin-bottom: 16px;">💰 Need a Site Like These?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 24px; opacity: 0.9;">Professional website for your business — $247 one-time fee. Live within 24 hours.</p>
-            <a href="https://eddiejking3rd-web.github.io/texas-business-sites/buy/" target="_blank" rel="noopener" style="display: inline-block; background: #22c55e; color: white; padding: 18px 48px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.2rem;">💳 Get Your Site — $247</a>
         </div>
     </div>
     <div class="footer">
-
         <p>Built by Eva — Texas Lead Gen Campaign</p>
     </div>
 </body>
