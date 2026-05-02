@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Choice Painting & Remodeling — Professional Painter | Houston, TX</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.8; color: #1e293b; }
+        .hero { background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%); color: white; padding: 100px 20px 80px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 12px; }
+        .hero .badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 20px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .hero .cta-phone { display: inline-block; background: white; color: #991b1b; padding: 14px 40px; border-radius: 50px; font-size: 1.5rem; font-weight: 700; text-decoration: none; margin-top: 30px; }
+        .section { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        .section h2 { font-size: 2rem; color: #991b1b; margin-bottom: 30px; text-align: center; }
+        .about-card { background: #fef2f2; border-radius: 16px; padding: 40px; margin-bottom: 40px; border-left: 5px solid #dc2626; }
+        .about-card p { font-size: 1.1rem; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .service-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .service-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .service-card h3 { font-size: 1.2rem; color: #991b1b; margin-bottom: 8px; }
+        .testimonials { background: #fef2f2; padding: 60px 20px; text-align: center; }
+        .testimonial-card { max-width: 700px; margin: 0 auto 30px; background: white; padding: 30px; border-radius: 12px; }
+        .testimonial-card p { font-style: italic; font-size: 1.05rem; }
+        .testimonial-card .author { font-weight: 600; margin-top: 12px; color: #991b1b; }
+        .pricing { background: white; padding: 60px 20px; text-align: center; }
+        .pricing-card { max-width: 400px; margin: 0 auto; background: linear-gradient(135deg, #991b1b, #dc2626); color: white; border-radius: 16px; padding: 40px; }
+        .pricing-card .price { font-size: 3rem; font-weight: 800; }
+        .pricing-card .sub { opacity: 0.85; margin: 8px 0 20px; }
+        .pricing-card .btn { display: inline-block; background: white; color: #991b1b; padding: 14px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; }
+        .pricing-card ul { list-style: none; margin: 20px 0; text-align: left; }
+        .pricing-card ul li { padding: 6px 0; }
+        .pricing-card ul li::before { content: "✅ "; }
+        .cta { background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%); color: white; text-align: center; padding: 80px 20px; }
+        .cta h2 { font-size: 2.2rem; }
+        .cta p { font-size: 1.1rem; opacity: 0.9; margin: 16px 0 24px; }
+        .cta .btn { display: inline-block; background: white; color: #991b1b; padding: 16px 48px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+        .footer { background: #991b1b; color: white; text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.9; }
+        nav { background: #991b1b; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        nav .logo { color: white; font-size: 1.2rem; font-weight: 700; }
+        nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; }
+        nav a:hover { color: white; }
+        @media (max-width: 600px) { .hero h1 { font-size: 2rem; } .hero .cta-phone { font-size: 1.2rem; padding: 12px 24px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">First Choice Painting</div>
+        <div><a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+    </nav>
+    <section class="hero">
+        <div class="badge">📍 Serving Greater Houston, TX</div>
+        <h1>First Choice Painting & Remodeling</h1>
+        <p>Professional Interior & Exterior Painting — Houston's Trusted Painters</p>
+        <a href="tel:+18327662150" class="cta-phone">(832) 766-2150</a>
+    </section>
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <div class="about-card">
+            <p>First Choice Painting & Remodeling is a Houston-based painting company dedicated to delivering high-quality workmanship on every project. We specialize in both interior and exterior painting, as well as remodeling services for residential and commercial clients. Our team takes pride in transforming spaces with precision, care, and attention to detail.</p>
+            <p style="margin-top: 16px;"><strong>Phone:</strong> (832) 766-2150</p>
+            <p><strong>Email:</strong> claytyler68@gmail.com</p>
+            <p><strong>Service Area:</strong> Houston, Katy, Sugar Land, Cypress, and surrounding areas</p>
+        </div>
+    </section>
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card"><div class="icon">🏠</div><h3>Interior Painting</h3><p>Professional interior painting for walls, ceilings, trim, and cabinets with premium materials.</p></div>
+            <div class="service-card"><div class="icon">🏡</div><h3>Exterior Painting</h3><p>Weather-resistant exterior painting that protects and beautifies your home or business.</p></div>
+            <div class="service-card"><div class="icon">🔨</div><h3>Remodeling</h3><p>Full kitchen, bath, and room remodeling services to update and improve your space.</p></div>
+            <div class="service-card"><div class="icon">🎨</div><h3>Color Consultation</h3><p>Expert color selection advice to help you choose the perfect palette for your project.</p></div>
+            <div class="service-card"><div class="icon">🏢</div><h3>Commercial Painting</h3><p>Professional painting for offices, retail spaces, warehouses, and multi-unit properties.</p></div>
+            <div class="service-card"><div class="icon">🛡️</div><h3>Drywall & Repair</h3><p>Drywall installation, patching, and texturing to prepare surfaces for a flawless finish.</p></div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <h2 style="font-size: 2rem; color: #991b1b; margin-bottom: 30px;">What Customers Say</h2>
+        <div class="testimonial-card"><p>"First Choice did an incredible job painting our entire home. Professional, on time, and the quality is outstanding."</p><div class="author">— Jennifer L., Katy</div></div>
+        <div class="testimonial-card"><p>"They remodeled our kitchen and painted the exterior. Couldn't be happier with the results!"</p><div class="author">— Robert M., Houston</div></div>
+    </section>
+    <section class="pricing" id="pricing">
+        <h2 style="font-size: 2rem; color: #991b1b; margin-bottom: 30px;">Get Your Professional Website</h2>
+        <div class="pricing-card">
+            <div class="price">$247</div>
+            <div class="sub">One-time fee — no monthly charges</div>
+            <ul>
+                <li>Custom-designed website for your business</li>
+                <li>Mobile-friendly & fast loading</li>
+                <li>Services, pricing & gallery pages</li>
+                <li>Contact forms & lead capture</li>
+                <li>Google Maps integration</li>
+                <li>Free .com domain included</li>
+            </ul>
+            <a href="mailto:onlbusi56@gmail.com?subject=I%20want%20my%20website%20-%20First%20Choice%20Painting&body=Hi%2C%20I%20saw%20my%20demo%20site%20and%20I%27m%20interested%20in%20getting%20my%20professional%20website." class="btn">Claim Your Site</a>
+        </div>
+    </section>
+    <section class="cta" id="contact">
+        <h2>Ready to Grow Your Business?</h2>
+        <p>A professional website helps customers find you on Google, builds trust, and gets you more calls.</p>
+        <p>Your demo site is live right now — see what your online presence could look like.</p>
+        <a href="tel:+18327662150" class="btn">Call (832) 766-2150</a>
+    </section>
+    <footer class="footer">
+        <p>First Choice Painting & Remodeling | Serving Greater Houston, Texas</p>
+        <p style="margin-top: 8px;">Phone: (832) 766-2150 | Email: claytyler68@gmail.com</p>
+        <p style="margin-top: 8px; opacity: 0.7;">Website built by Eva — reach out to claim your professional business site</p>
+    </footer>
+</body>
+</html>
